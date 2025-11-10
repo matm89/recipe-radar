@@ -1,17 +1,22 @@
-import recipe from '../assets/hero1.jpg';
 import { Star, Clock, Flame } from 'lucide-react';
+import type { Recipe } from '../types/recipe';
 
-export default function RecipeCard() {
+interface RecipeCardProps {
+  recipe: Recipe;
+}
+
+export default function RecipeCard({ recipe }: RecipeCardProps) {
+  console.log(recipe);
   return (
-    <div className="max-w-[500px] bg-white rounded-2xl shadow-lg hover:shadow-lg transition overflow-hidden group hover:cursor-pointer">
+    <div className="min-w-[500px] bg-white rounded-2xl shadow-lg hover:shadow-lg transition overflow-hidden group hover:cursor-pointer">
       <img
-        src={recipe}
+        src={recipe.image}
         alt="recipe-image"
         className="w-full h-[200px] object-cover transition-transform duration-500 ease-out group-hover:scale-110"
       />
 
       <div className="p-4 pb-5">
-        <h2 className="text-xl font-semibold mb-4">Keto Italian Beef With Cabbage Noodles</h2>
+        <h2 className="text-xl font-semibold mb-4">{recipe.title}</h2>
 
         <div className="flex items-center gap-1 mb-4">
           <Star className="text-yellow-400 fill-yellow-400 w-5 h-5" />
@@ -19,7 +24,7 @@ export default function RecipeCard() {
           <Star className="text-yellow-400 fill-yellow-400 w-5 h-5" />
           <Star className="text-yellow-400 fill-yellow-400 w-5 h-5" />
           <Star className="text-gray-300 w-5 h-5" />
-          <p className="text-green-600 text-sm ml-2 font-medium">1959 ratings</p>
+          <p className="text-green-600 text-sm ml-2 font-medium">{recipe.likes} ratings</p>
         </div>
 
         <div className="flex justify-between items-center">

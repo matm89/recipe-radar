@@ -1,16 +1,29 @@
 import { useState } from 'react';
 import { getRecipes } from '../../services/recipeService';
 import { Search } from 'lucide-react';
+import type { Recipe } from '../types/recipe';
 
-export default function SearchBar() {
+interface SerchBarProps {
+  setFetchedRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SearchBar({ setFetchedRecipes, setSearchText }: SerchBarProps) {
   const [ingredients, setIngredients] = useState('');
+  const [loading, setLoading] = useState(false);
 
   async function handleSearch() {
+    if (!ingredients.trim()) return;
     try {
+      setLoading(true);
       const data = await getRecipes(ingredients);
-      console.log(data);
+      setFetchedRecipes(data);
+      setSearchText(ingredients);
+      setIngredients('');
     } catch (error) {
       console.log('Error fetching recipes:', error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -25,9 +38,10 @@ export default function SearchBar() {
         onChange={(e) => setIngredients(e.target.value)}
       />
       <button
+        disabled={loading || !ingredients.trim()}
         className="bg-emerald-500 px-4 rounded-full text-white absolute right-1 top-1/2 -translate-y-1/2 h-10 w-32 font-semibold shadow-md hover:bg-emerald-600 transition cursor-pointer"
         onClick={handleSearch}>
-        Search
+        {loading ? 'Searching…' : 'Search'}
       </button>
     </div>
   );

@@ -1,8 +1,16 @@
 import Header from '../components/Header';
-import recipe from '../assets/hero1.jpg';
 import { Clock, Flame } from 'lucide-react';
+import type { Recipe } from '../types/recipe';
+import { useParams } from 'react-router-dom';
 
-export default function RecipePage() {
+interface RecipePageProps {
+  fetchedRecipes: Recipe[];
+}
+
+export default function RecipePage({ fetchedRecipes }: RecipePageProps) {
+  const { id } = useParams<{ id: string }>();
+
+  const recipe = fetchedRecipes.find((el) => el.id === Number(id));
   return (
     <div>
       <div className="bg-emerald-500 min-h-72">
@@ -26,9 +34,7 @@ export default function RecipePage() {
               </p>
             </div>
           </div>
-          <h1 className="text-6xl font-bold mt-12 leading-16 mb">
-            Keto Italian Beef With Cabbage Noodles
-          </h1>
+          <h1 className="text-6xl font-bold mt-12 leading-16 mb">{recipe?.title}</h1>
           <p className="mt-10">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ducimus optio in
             voluptatem minima, eligendi porro, perspiciatis ad, voluptates doloremque impedit est
@@ -40,7 +46,11 @@ export default function RecipePage() {
             <p>Ingredients</p>
           </div>
         </div>
-        <img src={recipe} alt="recipe-image" className="h-[700px] w-md rounded-2xl object-cover" />
+        <img
+          src={recipe?.image}
+          alt="recipe-image"
+          className="h-[700px] w-md rounded-2xl object-cover"
+        />
       </div>
     </div>
   );
