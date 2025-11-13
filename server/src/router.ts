@@ -16,4 +16,7 @@ router.post('/favorites',RecipeValidator, addFavorite);
 router.get('/favorites', getFavorites);
 router.delete('/favorites/:id',IdValidator, deleteFavorite);
 
+// Testing 🧪
+router.get('/', (req, res)=>{res.status(200).json('It is alive! 🧟')});
+
 export default router;
