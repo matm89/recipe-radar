@@ -16,7 +16,8 @@ export default defineConfig({
     setupFiles: ["./test/setup.ts"],
     coverage: {
       enabled: true,
-      provider: 'v8'
+      provider: 'v8',
+      exclude: ['node_modules', 'dist', 'client/src/assets'],
     },
   },
 });

@@ -15,7 +15,7 @@ vi.mock('react-router-dom', () => ({
   MemoryRouter: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-//* Mock the recipeService
+//! Mock the recipeService
 vi.mock('../services/recipeService', () => ({
   getRandomRecipes: vi.fn(),
   getRecipes: vi.fn(),
