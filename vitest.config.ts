@@ -1,17 +1,22 @@
 import { defineConfig } from "vitest/config";
 import react from '@vitejs/plugin-react';
-
-// import dotenv from "dotenv";
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './client/src'),
+    },
+    dedupe: ['react', 'react-dom'],
+  },
   test: {
     environment: 'jsdom',
     globals: true,
     setupFiles: ["./test/setup.ts"],
-    coverage:{
+    coverage: {
       enabled: true,
-      provider:'v8'
-    }
+      provider: 'v8'
+    },
   },
 });
