@@ -35,3 +35,10 @@ client/node_modules/
 # Server build output
 server/dist/
 server/node_modules/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
