@@ -59,7 +59,7 @@ test.describe('Favourites', ()=>{
 
     let favoritesDb:typeof mockFavoriteGreenTomatoSalad = [];
 
-    await page.route('http://localhost:3000/favorites', async (route, request) => {
+    await page.route('http://localhost:3000/favorites', async (route) => {
       if(route.request().method() === 'POST'){
         favoritesDb.push(mockFavoriteGreenTomatoSalad[0]);
         const json = 'added to Favorites';

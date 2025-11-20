@@ -1,7 +1,6 @@
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 import 'dotenv/config';
 import { validationResult } from 'express-validator';
-import {recipe} from '../mocks/mockRecipes';
 
 const apiKey = process.env.SPOON_API_KEY;
 

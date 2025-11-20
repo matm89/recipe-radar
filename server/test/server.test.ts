@@ -11,7 +11,7 @@ vi.mock('../src/controllers/aiController', () => ({
 import { app } from '../src/server';
 import * as http from 'http';
 
-import { ingredientsEmpty,ingredientsTomato, ingredientsTomatoOnion } from './mocks/mockIngredients';
+import { ingredientsEmpty,ingredientsTomato } from './mocks/mockIngredients';
 import { idEmpty, idRecipe } from './mocks/mockId';
 import { getAiHistory } from '../src/controllers/aiController'; 
 
