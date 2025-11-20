@@ -8,11 +8,11 @@ The project was already well-structured and written in TypeScript, with an Expre
 
 ## Features 🔧
 
-Our objective was twofold:  
+Our objective was twofold:
 
-- Make the application **safer and more reliable**  
+- Make the application **safer and more reliable**
 
-- Add **AI generated Recipe History**  
+- Add **AI generated Recipe History**
 
 ### Validators Feature 🔐
 
@@ -46,24 +46,24 @@ Finally, we used **Playwright** 🎭 to simulate real user journeys and verify t
 
 ## Collaboration
 
-Working as a team meant learning how to collaborate effectively with Git — and it wasn’t always smooth at the start.
+Working as a team meant learning how to collaborate effectively with Git, and it wasn’t always smooth at the start.
 
 We faced several challenges:
-- Conflicting changes  
-- Diverging branch trees  
-- Accidental merge commits  
+- Conflicting changes
+- Diverging branch trees
+- Accidental merge commits
 
 But through these struggles, we learned:
-- How to keep branches small and focused  
-- How to squash commits into meaningful units of work  
-- How to recover from conflicts using rebase, reset, and cherry-pick  
-- How to maintain a **clean and readable Git history**  
-- How to structure our workflow with clear:  
-  - feature branches  
-  - pull requests  
-  - code reviews  
+- How to keep branches small and focused
+- How to squash commits into meaningful units of work
+- How to recover from conflicts using rebase, reset, and cherry-pick
+- How to maintain a **clean and readable Git history**
+- How to structure our workflow with clear:
+  - feature branches
+  - pull requests
+  - code reviews
 
-By the end, we were merging clean, well-documented branches with confidence, and our Git workflow became an actual strength of the project — not a source of chaos.
+By the end, we were merging clean, well-documented branches with confidence, and our Git workflow became an actual strength of the project, not a source of chaos.
 
 ---
 
