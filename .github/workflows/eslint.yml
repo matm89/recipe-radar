@@ -32,7 +32,7 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm ci
+          npm install
 
       - name: Run ESLint
         env:
